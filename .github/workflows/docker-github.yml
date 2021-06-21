@@ -1,4 +1,4 @@
-name: Continuos Delivery with GitHub Docker Registry
+name: Continuous Delivery with GitHub Docker Registry
 
 on:
   workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
       - name: Build image
         run: |
           IMAGE_VERSION=$(date +'%Y%m%d.%H%M%S')
-          docker build -t ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:IMAGE_VERSION .
+          docker build -t ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:$IMAGE_VERSION .
       - name: Push image to DockerHub
-        run: docker push ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:IMAGE_VERSION
+        run: docker push ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:$IMAGE_VERSION
         

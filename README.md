@@ -1,4 +1,4 @@
-# Ejemplo 3 - GitHub Actions + Entrega continua con Docker y DockerHub
+# 4.3.Integracion-y-entrega-continua-ejem-3
 
 Este proyecto consta de un servidor REST sencillo para la gestión de items.
 

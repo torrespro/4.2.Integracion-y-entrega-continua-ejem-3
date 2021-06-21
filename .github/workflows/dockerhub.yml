@@ -1,4 +1,4 @@
-name: Continuos Delivery with DockerHub
+name: Continuous Delivery with DockerHub
 
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
       - name: Build image
         run: |
           IMAGE_VERSION=$(date +'%Y%m%d.%H%M%S')
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:IMAGE_VERSION .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_VERSION .
       - name: Push image to DockerHub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:IMAGE_VERSION
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_VERSION
         

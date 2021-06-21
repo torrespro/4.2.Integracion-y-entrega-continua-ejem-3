@@ -1,4 +1,4 @@
-name: Continuous Delivery with GitHub Docker Registry
+name: Continuous Delivery with GitHub Container Registry
 
 on:
   workflow_dispatch:

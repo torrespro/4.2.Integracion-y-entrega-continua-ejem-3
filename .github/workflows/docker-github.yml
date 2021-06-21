@@ -3,6 +3,9 @@ name: Continuous Delivery with GitHub Docker Registry
 on:
   workflow_dispatch:
 
+env:
+  IMAGE_NAME: items
+
 jobs:
   build:
     name: Build Java application

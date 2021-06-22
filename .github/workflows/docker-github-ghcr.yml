@@ -3,13 +3,10 @@ name: Continuous Delivery with GitHub Container Registry
 on:
   workflow_dispatch:
 
-env:
-  IMAGE_NAME: items
-
 jobs:
   build:
     name: Build Java application
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: Clone repository
       uses: actions/checkout@v2
@@ -27,9 +24,11 @@ jobs:
         retention-days: 1
 
   publish_in_ghcr:
-    name: Publish in GitHub Packages
-    runs-on: ubuntu-latest
+    name: Publish in GitHub Container Registry
+    runs-on: ubuntu-20.04
     needs: [build]
+    env:
+      IMAGE_NAME: items
     steps:
       - name: Clone repository
         uses: actions/checkout@v2

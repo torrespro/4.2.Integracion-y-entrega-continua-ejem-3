@@ -28,7 +28,6 @@ jobs:
     runs-on: ubuntu-20.04
     needs: [build]
     env:
-      IMAGE_NAME: items
       IMAGE_VERSION: $(date +'%Y%m%d.%H%M%S')
     steps:
       - name: Clone repository
@@ -47,5 +46,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_VERSION
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/items:${{ env.IMAGE_VERSION }}
         

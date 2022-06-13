@@ -7,7 +7,7 @@ Este proyecto consta de un servidor REST sencillo para la gestión de items.
 Para construir el JAR del proyecto (y lanzar los test):
 
 ```
-    ./mvnw clean package
+    mvn clean package
 ```
 
 ## Lanzar la aplicación en local (en local)
